@@ -46,12 +46,20 @@ export default defineConfig({
       name: 'PROD',
       use: {
         baseURL: process.env.PROD_URL,
+        httpCredentials: {
+          username: process.env.HTTP_CREDENTIALS_USERNAME_PROD as string,
+          password: process.env.HTTP_CREDENTIALS_PASSWORD_PROD as string,
+        },
       },
     },
     {
       name: 'QA',
       use: {
         baseURL: process.env.QA_URL,
+        httpCredentials: {
+          username: process.env.HTTP_CREDENTIALS_USERNAME_QA as string,
+          password: process.env.HTTP_CREDENTIALS_PASSWORD_QA as string,
+        },
       },
     },
     {
