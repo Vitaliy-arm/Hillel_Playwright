@@ -34,7 +34,7 @@ export default defineConfig({
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
 
-    baseURL: process.env.BASE_URL,
+    baseURL: process.env.PROD_URL,
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
@@ -42,6 +42,18 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
+    {
+      name: 'PROD',
+      use: {
+        baseURL: process.env.PROD_URL,
+      },
+    },
+    {
+      name: 'QA',
+      use: {
+        baseURL: process.env.QA_URL,
+      },
+    },
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
