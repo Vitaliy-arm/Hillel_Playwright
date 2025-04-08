@@ -6,7 +6,8 @@
   "scripts": {
     "allure:serve": "npx allure generate allure-results --clean -o allure-report && npx allure open allure-report",
     "test:prod": "npm run allure:serve & TESTOMATIO=tstmt_wPK56rW3k7LnLWMtA0tq5gpRzPycO9UJMw1742061173 npx playwright test --ui --project=PROD && npm run allure:serve",
-    "test:qa": "TESTOMATIO=tstmt_wPK56rW3k7LnLWMtA0tq5gpRzPycO9UJMw1742061173 npx playwright test --ui --project=QA && npm run allure:report"
+    "test:qa": "TESTOMATIO=tstmt_wPK56rW3k7LnLWMtA0tq5gpRzPycO9UJMw1742061173 npx playwright test --ui --project=QA && npm run allure:report",
+    "test:github": "npx playwright test /pw-hw_28.1/log_in.spec.ts --project=PROD"
   },
   "keywords": [],
   "author": "",
